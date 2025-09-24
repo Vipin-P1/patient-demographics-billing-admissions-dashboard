@@ -2,9 +2,9 @@
 
 ## Objective
 
-This Tableau storyboard provides a comprehensive view of patient demographics, billing patterns, and hospital admission trends. It is designed to support healthcare managers, hospital administrators, and insurance analysts in understanding patient population characteristics, identifying high-cost conditions, and optimising resource allocation across admissions and insurance providers. By integrating patient-level, insurance, and medical condition data, the storyboard enables decision-makers to explore patterns, uncover cost drivers, and better understand patient care dynamics.
+This Tableau storyboard was created to provide a comprehensive view of patient demographics, billing patterns, and hospital admission trends. The project aims to support healthcare managers, hospital administrators, and insurance analysts in understanding patient population characteristics, identifying high-cost conditions, and optimising resource allocation across admissions and insurance providers.
 
-The storyboard is composed of three interconnected dashboards, each highlighting complementary aspects of healthcare analytics: demographics, billing, and admission analysis. Together, they create a holistic perspective of hospital operations, supporting strategic and operational planning.
+The storyboard consists of three interconnected dashboards, each focusing on complementary aspects of healthcare analytics: demographics, billing, and admission analysis. By integrating patient-level, insurance, and medical condition data, the dashboards allow decision-makers to explore patterns, identify cost drivers, and understand patient care dynamics.
 
 ---
 
@@ -18,15 +18,13 @@ The storyboard is composed of three interconnected dashboards, each highlighting
 
 - **Source**: [Kaggle Synthetic Healthcare Dataset](https://www.kaggle.com/datasets/prasad22/healthcare-dataset)  
 - **Coverage**: Patient demographics, medical conditions, insurance providers, billing amounts, and admission types.  
+- **Preparation Steps**:
+  - Standardised age bins and medical condition codes.
+  - Removed incomplete patient records and anonymised identifiers.
+  - Aggregated billing amounts by patient, condition, and admission type for accuracy.
+  - Calculated KPI measures such as average billing per admission, total billing, and dominant age group.  
 
-**Preparation Steps:**
-
-1. Standardised age bins and medical condition codes.  
-2. Removed incomplete patient records and anonymised identifiers.  
-3. Aggregated billing amounts by patient, condition, and admission type for accuracy.  
-4. Calculated KPI measures such as average billing per admission, total billing, and dominant age group.  
-
-This dataset was chosen for its comprehensiveness across multiple hospital metrics, ensuring the dashboards provide actionable insights for operational and financial planning.
+This dataset was chosen for its comprehensiveness across multiple hospital metrics, supporting actionable insights for operational and financial planning.
 
 ---
 
@@ -34,76 +32,81 @@ This dataset was chosen for its comprehensiveness across multiple hospital metri
 
 ### 1. Patient Demographics and Medical Insights
 
-This dashboard provides a high-level understanding of the patient population and condition prevalence. It highlights **average patient age (54 years)**, the **most diagnosed medical condition (Obesity)**, and the **dominant age group (45–59 years)**. These KPIs contextualise the patient base and highlight priority areas for intervention.
+This dashboard provides a high-level overview of the hospital’s patient population and prevalent medical conditions. It highlights key KPIs such as average patient age (54 years), the most diagnosed medical condition (Obesity), and the dominant age group (45–59 years). The visualisations allow administrators to quickly identify which patient segments contribute most to admissions and billing, and how these segments differ by age, gender, and insurance coverage.
 
-The **Patient Breakdown by Gender and Age Bin** is a bar chart showing billing distribution for male and female patients across age bins (12, 24, 36, 48, 60, 72+). Hovering over the bars reveals the average length of stay, indicating which age groups consume the most resources. Middle-aged patients (45–59) emerge as the highest billing segment, suggesting targeted wellness or preventive programs could reduce financial burden.  
+The **Patient Breakdown by Gender and Age Bin** chart shows billing distribution for male and female patients across age bins (12, 24, 36, 48, 60, 72+). Hovering over bars reveals the average length of stay, highlighting which age groups generate higher resource use. This provides insights into middle-aged patients as the primary drivers of hospital billing, informing targeted interventions or wellness programs.  
 
-![Patient Demographics and Medical Insights](https://github.com/Vipin-P1/patient-demographics-billing-admissions-dashboard/blob/main/visualizations/Patient%20Demographic%20and%20Medical%20Insights%20Dashboard.jpg)  
+![Patient Demographics and Medical Insights](https://github.com/Vipin-P1/patient-demographics-billing-admissions-dashboard/blob/main/visualizations/Patient%20Demographic%20and%20Medical%20Insights%20Dashboard.jpg)
+
+The next chart focuses on **gender and age distribution of patient cases**. Horizontal stacked bars show the number of cases for male and female patients in each age group. Hovering provides a breakdown of admission type (elective, emergency, urgent), enabling administrators to see where hospital resources are concentrated.  
+
 ![Patient Age Breakdown by Gender](https://github.com/Vipin-P1/patient-demographics-billing-admissions-dashboard/blob/main/visualizations/Breakdown%20by%20Gender%20Detail.jpg)
 
-The **Patient Age Distribution** uses horizontal stacked bars to visualise case counts by gender for each age group, with hover details revealing admission type (elective, emergency, urgent). The concentration in the 49–59 age group reinforces that healthcare resources are predominantly consumed by middle-aged adults, highlighting the need for condition-specific care planning.
+**Patient Age Distribution** reinforces the predominance of the 49–59 age group. Hovering on these bars reveals admission type splits, making it clear how middle-aged patients drive both patient volume and resource utilisation.  
 
 ![Patient Age Distribution](https://github.com/Vipin-P1/patient-demographics-billing-admissions-dashboard/blob/main/visualizations/Age%20Distribiton%20Detail.jpg)
 
-**Age-Related Variance by Insurance Provider** is presented via vertical box plots showing billing distribution across age groups for each provider. Medicare has the broadest distribution, indicating variability in cost per patient, while United Healthcare is more concentrated. Hovering displays average billing per age group, supporting cost variance analysis across insurers.
+Finally, the **Age-Related Variance by Insurance Provider** chart uses vertical box plots to show billing distribution by age group across insurers. Medicare shows the widest cost spread, whereas United Healthcare is more concentrated. Hovering highlights average billing per age group, providing actionable insights for cost management and insurance negotiations.  
 
 ![Age-Related Variance in Healthcare Costs](https://github.com/Vipin-P1/patient-demographics-billing-admissions-dashboard/blob/main/visualizations/Age%20Related%20Variance%20Detail.jpg)
-
-**Implication:** This dashboard allows administrators to identify patient groups driving the most billing and admissions, highlighting differences by gender, age, and insurance provider. It provides a foundation for targeted interventions, cost management, and strategic planning.
 
 ---
 
 ### 2. Billing Overview: Insurance, Admissions & Conditions
 
-This dashboard focuses on financial performance and insurance-related patterns. KPIs include **average billing per admission (25K)**, **costliest condition (Hypertension)**, and **total billing amount (458M)**.
+This dashboard focuses on financial performance and insurance patterns. It presents key KPIs such as average billing per admission (25K), costliest condition (Hypertension), and total billing amount (458 million). Administrators and finance teams can use this dashboard to understand which insurance providers and medical conditions contribute most to hospital revenue and resource allocation.
 
-The **Billing Distribution by Insurance Provider** shows Medicare and Aetna dominating with 133M and 128M respectively. Hovering reveals gender splits, providing insights into patient composition across insurers.
+**Billing Distribution by Insurance Provider** shows that Medicare and Aetna dominate total billing (133M and 128M). Hovering reveals gender split for each provider, highlighting patient composition and potential equity considerations.  
 
-![Billing Overview: Insurance, Admissions & Conditions](https://github.com/Vipin-P1/patient-demographics-billing-admissions-dashboard/blob/main/visualizations/Billing%20Overview%20Dashboard.jpg)  
+![Billing Overview: Insurance, Admissions & Conditions](https://github.com/Vipin-P1/patient-demographics-billing-admissions-dashboard/blob/main/visualizations/Billing%20Overview%20Dashboard.jpg)
+
+The next chart provides a more granular view of **billing across insurance providers by gender**, helping decision-makers visualise which patient segments are driving revenue within each insurer.  
+
 ![Billing Distribution Across Insurance Providers](https://github.com/Vipin-P1/patient-demographics-billing-admissions-dashboard/blob/main/visualizations/Insurance%20Providers%20Distribution%20Detail.jpg)
 
-**Billing Overview by Medical Condition** uses bar charts with trend lines to show average billing per condition. Obesity and asthma top both total and average costs. Hovering shows age breakdowns, aiding condition-specific planning.
+**Billing Overview by Medical Condition** highlights average billing for each condition, with obesity and asthma at the top. Hovering shows age breakdown, supporting condition-specific planning and resource allocation strategies.  
 
 ![Billing Overview by Medical Condition](https://github.com/Vipin-P1/patient-demographics-billing-admissions-dashboard/blob/main/visualizations/Billing%20Overview%20Detail.jpg)
 
-The **Distribution of Patient Admission Types** is visualised with a pie chart showing elective, urgent, and emergency admissions. Elective cases dominate (37.8% of 6,700+ cases), with hover details showing age bin breakdown.  
-
-**Implication:** This dashboard provides finance teams and administrators with insights on cost drivers, insurance impacts, and admission trends, enabling informed resource allocation and preventive care strategies.
+This dashboard also provides insights into **admission types**, showing elective, urgent, and emergency cases. Elective admissions dominate, and hovering reveals age bin and case count, supporting operational planning and staffing strategies.  
 
 ---
 
 ### 3. Healthcare Billing and Admissions Analysis
 
-This dashboard synthesises patient, billing, and admission data to guide actionable hospital management decisions. KPIs include **top insurance provider by billing (Medicare – 133M)**, **total admissions (18,000)**, and **top billed admission type (Elective)**.
+The final dashboard synthesises patient, billing, and admission data to provide actionable insights for hospital management. It presents KPIs including top insurance provider by billing (Medicare, 133M), total admissions (18,000), and top billed admission type (Elective). 
 
-**Billing Amount vs Patient Volume Comparison** shows medication-level billing totals (e.g., Aspirin highest at 25K average) with hover revealing number of cases, highlighting medications contributing most to expenditure.
+**Billing Amount vs Patient Volume Comparison** shows the contribution of each medication to hospital expenditure, with hover displaying number of cases. This helps identify opportunities for cost optimisation and inventory planning.  
 
-![Healthcare Billing and Admissions Analysis](https://github.com/Vipin-P1/patient-demographics-billing-admissions-dashboard/blob/main/visualizations/Heahthcare%20Billing%20%26%20Admissions%20Dashboard.jpg)  
+![Healthcare Billing and Admissions Analysis](https://github.com/Vipin-P1/patient-demographics-billing-admissions-dashboard/blob/main/visualizations/Heahthcare%20Billing%20%26%20Admissions%20Dashboard.jpg)
+
+The **Medical Condition and Billing Amount by Admission Type** chart uses horizontal stacked bars to highlight high-cost conditions and their respective admission types, with asthma and obesity at the top. Hovering shows the number of cases per condition-admission combination, informing disease-specific resource allocation.  
+
 ![Billing Amount and Patient Volume Comparison](https://github.com/Vipin-P1/patient-demographics-billing-admissions-dashboard/blob/main/visualizations/Billing%20Amount%20Patient%20Volume%20Detail.jpg)
 
-**Medical Condition and Billing Amount by Admission Type** uses horizontal stacked bars to show billing for each condition by admission type. Asthma and Obesity dominate. Hovering provides number of cases per condition-admission combination, enabling disease-specific resource allocation and cost control.
-
-**Billing Distribution by Admission Type** employs donut charts for elective, urgent, and emergency admissions. Inner circles show total billing, while hover details display insurance breakdown percentages.
+Finally, **Billing Distribution by Admission Type** uses donut charts to visualise how billing varies by admission type and insurance provider. The central portion of each donut shows total billing, and hovering reveals percentage contribution by insurer, supporting detailed budgeting and pricing strategies.  
 
 ![Billing Distribution by Admission Type](https://github.com/Vipin-P1/patient-demographics-billing-admissions-dashboard/blob/main/visualizations/Admission%20Distribution%20Detail.jpg)
-
-**Implication:** By combining admissions, conditions, and billing metrics, this dashboard equips decision-makers to optimise financial performance, identify high-cost patient segments, and support strategic operational planning.
 
 ---
 
 ## Visualisation Design Choices
 
-The storyboard is tailored for hospital administrators, finance managers, and healthcare analysts. It uses a **neutral colour palette with blue and orange accents**, and features bar charts, stacked bars, box plots, pie charts, donut charts, and trend lines. Interactive elements include hover tooltips, drill-downs by age, gender, condition, and insurance provider, and navigation linking the three dashboards for a cohesive overview from demographics to billing to admissions.
+- **Audience**: Hospital administrators, finance managers, and healthcare analysts.  
+- **Colour palette**: Neutral base with blue and orange accents to distinguish metrics while keeping focus on data.  
+- **Chart types**: Bar charts, horizontal stacked bars, vertical box plots, pie charts, donut charts, and trend lines.  
+- **Interactive elements**: Hover tooltips, drill-downs by age, gender, condition, and insurance provider.  
+- **Storyboard structure**: Three dashboards linked via navigation to provide a holistic view from demographics to billing to admissions.
 
 ---
 
 ## Key Takeaways
 
-- Middle-aged patients (45–59) drive both admissions and billing, suggesting focus areas for care management.  
-- Obesity and asthma are the highest cost conditions, highlighting preventive program opportunities.  
-- Medicare and Aetna dominate total billing, demonstrating insurance-driven financial exposure.  
-- Elective admissions, while high in volume, also carry significant billing implications, necessitating careful capacity and cost management.  
-- Detailed breakdowns by gender, age, insurance, and admission type provide actionable insights for planning, allocation, and optimisation.
+- Middle-aged patients (45–59) drive both admissions and billing, indicating focus areas for care management.  
+- Obesity and asthma are the highest cost conditions, with implications for preventive programs.  
+- Medicare and Aetna dominate total billing, highlighting insurance-driven financial exposure.  
+- Elective admissions, though high in number, represent significant billing impact, necessitating careful capacity and cost management.  
+- Detailed breakdowns by gender, age, insurance, and admission type provide actionable insights for strategic planning, resource allocation, and cost optimisation.
 
 ---
 
@@ -113,5 +116,5 @@ This storyboard enables hospitals and healthcare organisations to:
 
 - Identify high-cost patient groups and conditions.  
 - Optimise resource allocation across admissions, insurance providers, and departments.  
-- Plan preventive care programs targeting conditions with highest financial and clinical impact.  
-- Support data-driven operational and financial decision-making to ensure better patient care and sustainable hospital operations.
+- Plan preventive care programs for conditions driving the greatest financial and clinical impact.  
+- Support data-driven financial and operational decisions, ensuring better patient care and sustainable hospital operations.
